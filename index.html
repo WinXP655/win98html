@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 98</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="desktop">
+        <div class="icon-container" tabindex="0">
+            <img src="my-computer-32.png" alt="" class="desktop-icon">
+            <div class="icon-text">Мой компьютер</div>
+        </div>
+        <div class="icon-container" tabindex="0">
+            <img src="my-documents-32.png" alt="" class="desktop-icon">
+            <div class="icon-text">Мои документы</div>
+        </div>
+        <div class="icon-container" tabindex="0">
+            <img src="ie-32.png" alt="" class="desktop-icon">
+            <div class="icon-text">Internet Explorer</div>
+        </div>
+        <div class="icon-container" tabindex="0">
+            <img src="network-32.png" alt="" class="desktop-icon">
+            <div class="icon-text">Сетевое окружение</div>
+        </div>
+        <div class="icon-container" tabindex="0">
+            <img src="trash-32.png" alt="" class="desktop-icon">
+            <div class="icon-text">Корзина</div>
+        </div>
+        <div class="icon-container" tabindex="0">
+            <img src="briefcase-32.png" alt="" class="desktop-icon">
+            <div class="icon-text">Портфель</div>
+        </div>
+        <div class="icon-container" tabindex="0">
+            <img src="outlook-32.png" alt="" class="desktop-icon">
+            <div class="icon-text">Outlook Express</div>
+        </div>
+    </div>
+
+    <div id="start-menu" class="hidden">
+        <div class="sidebar">
+            <div class="sidebar-text"><b>Windows</b>98</div>
+        </div>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="update-32.png"> <span>Windows Update</span>
+            </div>
+            <div class="menu-divider"></div>
+            <div class="menu-item has-submenu">
+                <img src="programs-32.png"> <span><u>П</u>рограммы</span>
+            </div>
+            <div class="menu-item has-submenu">
+                <img src="favorites-32.png"> <span><u>И</u>збранное</span>
+            </div>
+            <div class="menu-item has-submenu">
+                <img src="documents-32.png"> <span><u>Д</u>окументы</span>
+            </div>
+            <div class="menu-item has-submenu">
+                <img src="settings-32.png"> <span><u>Н</u>астройка</span>
+            </div>
+            <div class="menu-item has-submenu">
+                <img src="find-32.png"> <span><u>Н</u>айти</span>
+            </div>
+            <div class="menu-item">
+                <img src="help-32.png"> <span><u>С</u>правка</span>
+            </div>
+            <div class="menu-item">
+                <img src="run-32.png"> <span><u>В</u>ыполнить...</span>
+            </div>
+            <div class="menu-divider"></div>
+            <div class="menu-item">
+                <img src="logoff-32.png"> <span>Завершение сеанса User...</span>
+            </div>
+            <div class="menu-item">
+                <img src="shutdown-32.png"> <span>Завершение работы...</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="window-my-computer" class="window hidden">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                <img src="my-computer-16.png"> Мой компьютер
+            </div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize">
+                    <img src="min-98.png" alt="">
+                </button>
+                <button aria-label="Maximize">
+                    <img src="max-98.png" alt="">
+                </button>
+                <button aria-label="Close" id="close-my-computer">
+                    <img src="close-98.png" alt="">
+                </button>
+            </div>
+        </div>
+
+        <div class="menu-bar">
+            <span><u>Ф</u>айл</span>
+            <span><u>П</u>равка</span>
+            <span><u>В</u>ид</span>
+            <span>Перехо<u>д</u></span>
+            <span><u>И</u>збранное</span>
+            <span>Справка</span>
+			<img src="throbber.png" class="shell-logo">
+        </div>
+
+        <div class="toolbar">
+            <div class="tool-btn disabled">
+                <img src="back.png"><span>Назад</span>
+            </div>
+            <div class="tool-btn disabled">
+                <img src="forward.png"><span>Вперед</span>
+            </div>
+            <div class="tool-btn">
+                <img src="up.png"><span>Вверх</span>
+            </div>
+
+            <div class="tool-sep"></div>
+
+            <div class="tool-btn">
+                <img src="cut.png"><span>Вырезать</span>
+            </div>
+            <div class="tool-btn">
+                <img src="copy.png"><span>Копировать</span>
+            </div>
+            <div class="tool-btn">
+                <img src="paste.png"><span>Вставить</span>
+            </div>
+
+            <div class="tool-sep"></div>
+
+            <div class="tool-btn">
+                <img src="undo.png"><span>Отменить</span>
+            </div>
+
+            <div class="tool-sep"></div>
+
+            <div class="tool-btn">
+                <img src="delete.png"><span>Удалить</span>
+            </div>
+            <div class="tool-btn">
+                <img src="properties.png"><span>Свойства</span>
+            </div>
+
+            <div class="tool-sep"></div>
+
+            <div class="tool-btn">
+                <img src="view.png"><span>Вид</span>
+            </div>
+        </div>
+
+        <div class="address-bar">
+            <span class="address-label">Адрес</span>
+            <div class="address-input">
+                <img src="my-computer-16.png">
+                <span>Мой компьютер</span>
+                <div class="address-arrow"></div>
+            </div>
+        </div>
+
+        <div class="window-body">
+            <div class="side-panel">
+                <img src="my-computer-32.png" class="big-icon">
+                <h2>Мой компьютер</h2>
+                <div class="panel-line"></div>
+                <p>Выберите элемент для просмотра его описания.</p>
+            </div>
+
+            <div class="file-view">
+                <div class="folder-item" tabindex="0">
+                    <img src="floppy-32.png"><span>Диск 3,5 (A:)</span>
+                </div>
+                <div class="folder-item" tabindex="0">
+                    <img src="hdd-32.png"><span>(C:)</span>
+                </div>
+                <div class="folder-item" tabindex="0">
+                    <img src="cd-32.png"><span>(D:)</span>
+                </div>
+
+                <div class="folder-item" tabindex="0">
+                    <img src="printers-32.png"><span>Принтеры</span>
+                </div>
+                <div class="folder-item" tabindex="0">
+                    <img src="control-panel-32.png"><span>Панель управления</span>
+                </div>
+                <div class="folder-item" tabindex="0">
+                    <img src="web-folders-32.png"><span>Web Folders</span>
+                </div>
+                <div class="folder-item" tabindex="0">
+                    <img src="scheduled-tasks-32.png"><span>Назначенные задания</span>
+                </div>
+                <div class="folder-item" tabindex="0">
+                    <img src="dial-up-32.png"><span>Удаленный доступ к сети</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <div class="status-field">Выберите объект.</div>
+            <div class="status-field" style="width: 150px;"><img src="my-computer-16.png"> Мой компьютер</div>
+        </div>
+    </div>
+
+    <footer id="taskbar">
+        <button id="start-button">
+            <img src="start.png" alt="Win">
+            <span>Пуск</span>
+        </button>
+
+        <div class="divider"></div>
+
+        <div id="quick-launch">
+            <img src="show-desktop.png" title="Свернуть все окна" class="ql-icon">
+            <img src="ie.png" title="Запустить обозреватель Internet Explorer" class="ql-icon">
+            <img src="outlook.png" title="Запустить Outlook Express" class="ql-icon">
+        </div>
+
+        <div class="divider"></div>
+
+        <div id="tasks-area"></div>
+
+        <div id="system-tray">
+            <img src="agent.png" class="tray-icon" title="Планировщик готов.">
+            <img src="lang-ru.png" class="tray-icon" title="Русский">
+            <img src="sound.png" class="tray-icon" title="Громкость">
+            <div id="clock">0:00</div>
+        </div>
+    </footer>
+
+    <div id="startup-overlay">
+        <div class="window msgbox">
+            <div class="title-bar">
+                <div class="title-bar-text">VBScript: Windows 98 HTML</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" class="close-msg"><img src="close-98.png"></button>
+                </div>
+            </div>
+            
+            <div class="window-body msgbox-body">
+                <div class="msgbox-content">
+                    <img src="info-32.png" class="msg-icon" alt="Info">
+                    <div class="msg-text">
+                        Welcome to Windows 98 on HTML!<br>Click OK to start
+                    </div>
+                </div>
+                <div class="msgbox-buttons">
+                    <button id="start-systems-btn" class="default-btn">
+                        <span class="btn-label">OK</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="startup-sound" src="logon.wav" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

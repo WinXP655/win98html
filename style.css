@@ -1,0 +1,485 @@
+/* Global Font Override */
+body, button, input, select, textarea, .title-bar, .menu-bar, .status-bar, .icon-text {
+    font-family: "Microsoft Sans Serif", "Tahoma", sans-serif;
+    font-size: 11px; /* Equivalent to 8pt */
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    color: #000;
+}
+
+/* Specific Bold Elements */
+.title-bar-text, .start-button, .side-panel h2 {
+    font-weight: bold;
+}
+
+/* Apply the custom cursor to everything */
+*, html, body, button, .icon-container, .menu-item {
+    cursor: url('cursor.png') 0 0, default !important;
+}
+
+/* Optional: If want to keep the text cursor for actual text selection */
+.window-content p, .icon-text, input {
+    cursor: text !important;
+}
+
+:root {
+    /* Your Registry Color Scheme */
+    --Background: rgb(0, 128, 128);
+    --ButtonFace: rgb(192, 192, 192);
+    --ButtonHilight: rgb(255, 255, 255);
+    --ButtonShadow: rgb(128, 128, 128);
+    --ButtonDkShadow: rgb(0, 0, 0);
+    --ButtonLight: rgb(223, 223, 223);
+    --WindowText: rgb(0, 0, 0);
+	--ActiveTitle: rgb(0, 0, 128);
+	--GradientActiveTitle: rgb(16, 132, 208);
+	--TitleText: rgb(255, 255, 255);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.window {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    width: 600px;
+    background-color: var(--ButtonFace);
+    border-top: 1px solid var(--ButtonHilight);
+    border-left: 1px solid var(--ButtonHilight);
+    border-right: 1px solid var(--ButtonDkShadow);
+    border-bottom: 1px solid var(--ButtonDkShadow);
+    box-shadow: 1px 1px 0 var(--ButtonShadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.title-bar {
+    background: linear-gradient(90deg, var(--ActiveTitle), var(--GradientActiveTitle));
+    padding: 3px 2px 3px 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 18px;
+}
+
+.title-bar-text {
+    color: var(--TitleText);
+    font-weight: bold;
+    font-family: "Tahoma", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.title-bar-text img {
+    width: 16px;
+    height: 16px;
+    image-rendering: pixelated;
+}
+
+.title-bar-controls button {
+    width: 16px;
+    height: 14px;
+    background-color: var(--ButtonFace);
+    border: 1px solid var(--ButtonHilight);
+    border-right-color: var(--ButtonDkShadow);
+    border-bottom-color: var(--ButtonDkShadow);
+    margin-left: 2px;
+}
+
+/* Toolbars & Menu */
+.menu-bar { display: flex; justify-content: space-between; padding: 0 4px; font-size: 11px; gap: 10px; }
+.shell-logo {
+    width: 22px;
+    height: 22px;
+    border: 2px inset var(--ButtonFace);
+    margin-right: 2px;
+}
+.toolbar { display: flex; padding: 2px; border-top: 1px solid var(--ButtonShadow); border-bottom: 1px solid var(--ButtonShadow); gap: 5px; }
+.tool-btn { display: flex; flex-direction: column; align-items: center; font-size: 10px; padding: 2px 5px; }
+.tool-btn.disabled { filter: grayscale(1) opacity(0.5); }
+
+.address-bar { display: flex; align-items: center; padding: 3px; gap: 5px; border-bottom: 1px solid var(--ButtonShadow); }
+.address-input { 
+    flex-grow: 1; background: white; border: 1px solid var(--ButtonShadow); 
+    display: flex; align-items: center; padding: 1px 3px; font-size: 11px;
+}
+
+#startup-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.05); /* Very slight tint over the teal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.msgbox {
+    width: 330px; /* Fixed width for standard msgbox */
+    background-color: var(--ButtonFace);
+    border: 1px solid #ffffff;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    box-shadow: 1px 1px 0 #808080 inset, -1px -1px 0 #dfdfdf inset;
+}
+
+.msgbox-body {
+    padding: 18px 12px 12px 12px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--ButtonFace);
+}
+
+.msgbox-content {
+    display: flex;
+    align-items: flex-start; /* Aligns icon with top of text */
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-left: 5px;
+}
+
+.msg-icon {
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated;
+}
+
+.msg-text {
+    font-size: 11px;
+    line-height: 1.4;
+    color: #000;
+}
+
+.msgbox-buttons {
+    display: flex;
+    justify-content: center; /* Centers the button at the bottom */
+}
+
+/* OK Button */
+.default-btn {
+    width: 75px;
+    height: 23px;
+    border: 1px solid black; /* Outer focus ring */
+    background: var(--ButtonFace);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-label {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 1px dotted black; /* The inner selection dotted line */
+    outline-offset: -4px;
+}
+
+.default-btn:active .btn-label {
+    border: 1px solid #808080;
+    border-right-color: #ffffff;
+    border-bottom-color: #ffffff;
+    padding: 1px 0 0 1px; /* The "pressed" pixel shift */
+}
+.default-btn::before {
+    content: '';
+    position: absolute;
+    top: 1px; left: 1px; right: 1px; bottom: 1px;
+    border-top: 1px solid var(--ButtonHilight);
+    border-left: 1px solid var(--ButtonHilight);
+    border-right: 1px solid var(--ButtonShadow);
+    border-bottom: 1px solid var(--ButtonShadow);
+}
+
+/* The dotted line inside the button */
+.default-btn::after {
+    content: '';
+    position: absolute;
+    top: 3px; left: 3px; right: 3px; bottom: 3px;
+    border: 1px dotted black;
+}
+
+/* Content Area */
+.window-body {
+    background: white;
+    margin: 2px;
+    border: 2px inset var(--ButtonFace);
+    height: 300px;
+    display: flex;
+}
+
+.side-panel {
+	font-family: "Verdana", sans-serif;
+    width: 180px;
+    padding: 20px 10px;
+    /* The "Cloud" look*/
+    background: linear-gradient(180deg, #ffffff 0%, #7eb6e7 100%);
+    background-image: url('wvleft.bmp');
+    background-size: cover;
+    border-right: 1px solid var(--ButtonShadow);
+    color: #000;
+}
+.file-view { flex-grow: 1; padding: 20px; display: flex; flex-wrap: wrap; gap: 25px; }
+
+.folder-item { width: 80px; display: flex; flex-direction: column; align-items: center; text-align: center; font-size: 11px; }
+
+.status-bar { display: flex; background: var(--ButtonFace); border-top: 1px solid var(--ButtonShadow); }
+.status-field { padding: 2px 5px; font-size: 11px; border-right: 1px solid var(--ButtonShadow); flex-grow: 1; }
+
+#start-menu {
+    position: fixed;
+    bottom: 28px; /* Height of taskbar */
+    left: 2px;
+    width: 250px;
+    background-color: var(--ButtonFace);
+    display: flex;
+    border-top: 2px solid var(--ButtonHilight);
+    border-left: 2px solid var(--ButtonHilight);
+    border-right: 2px solid var(--ButtonDkShadow);
+    border-bottom: 2px solid var(--ButtonDkShadow);
+    box-shadow: 1px 1px 0 var(--ButtonShadow);
+    z-index: 2000;
+}
+
+.hidden { display: none !important; }
+
+/* The Dark Blue Sidebar */
+.sidebar {
+    width: 25px;
+    /* Win98 uses a very specific gradient: Dark Blue to Medium Blue */
+    background: linear-gradient(to bottom, #000080 0%, #1084d0 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Aligns text to the bottom */
+    align-items: center;
+    padding-bottom: 5px;
+    border-right: 1px solid var(--ButtonShadow);
+}
+
+.sidebar-text {
+    color: white;
+    /* This is the key for vertical text that looks professional */
+    writing-mode: vertical-lr; 
+    transform: rotate(180deg); 
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-rendering: optimizeSpeed;
+}
+
+.sidebar-text span {
+    color: rgb(192, 192, 192);
+    font-weight: normal;
+}
+
+/* Menu Items */
+.menu-items {
+    flex-grow: 1;
+    padding: 2px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    height: 38px;
+    font-size: 11px;
+    cursor: default;
+}
+
+.menu-item img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.menu-item:hover {
+    background-color: var(--Hilight);
+    color: var(--HilightText);
+}
+
+/* The Sub-menu Arrow */
+.has-submenu::after {
+    content: "";
+    margin-left: auto;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid black;
+}
+
+.has-submenu:hover::after {
+    border-left-color: white;
+}
+
+.menu-divider {
+    height: 1px;
+    background-color: var(--ButtonShadow);
+    border-bottom: 1px solid var(--ButtonHilight);
+    margin: 2px 1px;
+}
+
+/* underlined shortcut letters */
+u { text-decoration: underline; }
+
+body {
+    background-color: var(--Background);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    -webkit-font-smoothing: none;
+}
+
+#desktop {
+    width: 100%;
+    height: calc(100% - 28px);
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; /* Allows icons to wrap to next column if screen is small */
+    align-content: flex-start;
+    gap: 15px;
+}
+
+.icon-container {
+    width: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    outline: none; /* We will use custom focus styles */
+    cursor: default;
+}
+
+.desktop-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 4px;
+    image-rendering: pixelated; 
+}
+
+.icon-text {
+    color: white;
+    font-size: 11px;
+    padding: 2px 3px;
+    line-height: 1.2;
+    /* This creates the dotted border effect used in 98 */
+    border: 1px solid transparent;
+}
+
+/* When the icon is selected/focused */
+.icon-container:focus .icon-text {
+    background-color: var(--Hilight);
+    border: 1px dotted #ffefad; /* The classic selection "focus" box */
+}
+
+#taskbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 28px;
+    background-color: var(--ButtonFace);
+    /* Top border of the taskbar */
+    border-top: 1px solid var(--ButtonHilight);
+    box-shadow: 0 -1px 0 var(--ButtonFace); /* Adjusting thickness */
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    z-index: 1000;
+}
+
+#start-button {
+    height: 22px;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    font-weight: bold;
+    font-size: 11px;
+    background-color: var(--ButtonFace);
+    /* 98 3D Border Logic */
+    border-top: 1px solid var(--ButtonHilight);
+    border-left: 1px solid var(--ButtonHilight);
+    border-right: 1px solid var(--ButtonDkShadow);
+    border-bottom: 1px solid var(--ButtonDkShadow);
+    box-shadow: inset 1px 1px 0 var(--ButtonLight), 
+                1px 1px 0 var(--ButtonShadow);
+    cursor: default;
+}
+
+#start-button:active {
+    border-top: 1px solid var(--ButtonDkShadow);
+    border-left: 1px solid var(--ButtonDkShadow);
+    border-right: 1px solid var(--ButtonHilight);
+    border-bottom: 1px solid var(--ButtonHilight);
+    box-shadow: none;
+    padding: 1px 3px 0 5px; /* Subtle pixel shift when pressed */
+}
+
+#start-button img {
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+}
+
+.divider {
+    width: 2px;
+    height: 20px;
+    margin: 0 4px;
+    border-left: 1px solid var(--ButtonShadow);
+    border-right: 1px solid var(--ButtonHilight);
+}
+
+#quick-launch {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 2px;
+}
+
+.ql-icon {
+    width: 16px;
+    height: 16px;
+}
+
+#tasks-area {
+    flex-grow: 1;
+}
+
+#system-tray {
+    display: flex;
+    align-items: center;
+    padding: 0 6px;
+    height: 22px;
+    background-color: var(--ButtonFace);
+    /* Sunken effect */
+    border-top: 1px solid var(--ButtonShadow);
+    border-left: 1px solid var(--ButtonShadow);
+    border-right: 1px solid var(--ButtonHilight);
+    border-bottom: 1px solid var(--ButtonHilight);
+}
+
+.tray-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+#clock {
+    font-size: 11px;
+    margin-left: 4px;
+    color: var(--WindowText);
+}
