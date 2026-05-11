@@ -34,6 +34,8 @@ body, button, input, select, textarea, .title-bar, .menu-bar, .status-bar, .icon
 	--ActiveTitle: rgb(0, 0, 128);
 	--GradientActiveTitle: rgb(16, 132, 208);
 	--TitleText: rgb(255, 255, 255);
+	--Hilight: rgb(0, 0, 128);
+	--HilightText: rgb(255, 255, 255);
 }
 
 * {
