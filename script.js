@@ -8,26 +8,6 @@ const startBtn = document.getElementById('start-systems-btn');
 const overlay = document.getElementById('startup-overlay');
 const sound = document.getElementById('startup-sound');
 
-function startOS() {
-    // Play the classic logon.wav
-    sound.play().catch(e => console.log("Sound error:", e));
-    
-    // Remove the message box
-    overlay.style.display = 'none';
-    
-    // Optional: If want 'My Computer' to be open already on start
-    // document.getElementById('window-my-computer').classList.remove('hidden');
-}
-
-startBtn.addEventListener('click', startOS);
-
-// Allow closing with the X button or Enter key
-document.querySelector('.close-msg').addEventListener('click', startOS);
-window.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' && overlay.style.display !== 'none') {
-        startOS();
-    }
-});
 myCompIcon.addEventListener('dblclick', () => {
     myCompWindow.classList.remove('hidden');
 });

@@ -124,47 +124,6 @@ body, button, input, select, textarea, .title-bar, .menu-bar, .status-bar, .icon
     z-index: 10000;
 }
 
-.msgbox {
-    width: 330px; /* Fixed width for standard msgbox */
-    background-color: var(--ButtonFace);
-    border: 1px solid #ffffff;
-    border-right: 1px solid #000000;
-    border-bottom: 1px solid #000000;
-    box-shadow: 1px 1px 0 #808080 inset, -1px -1px 0 #dfdfdf inset;
-}
-
-.msgbox-body {
-    padding: 18px 12px 12px 12px;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--ButtonFace);
-}
-
-.msgbox-content {
-    display: flex;
-    align-items: flex-start; /* Aligns icon with top of text */
-    gap: 15px;
-    margin-bottom: 25px;
-    padding-left: 5px;
-}
-
-.msg-icon {
-    width: 32px;
-    height: 32px;
-    image-rendering: pixelated;
-}
-
-.msg-text {
-    font-size: 11px;
-    line-height: 1.4;
-    color: #000;
-}
-
-.msgbox-buttons {
-    display: flex;
-    justify-content: center; /* Centers the button at the bottom */
-}
-
 /* OK Button */
 .default-btn {
     width: 75px;
